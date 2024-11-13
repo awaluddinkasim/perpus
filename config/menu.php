@@ -4,6 +4,7 @@ return [
     [
         'label' => 'Dashboard',
         'icon' => 'monitor',
+        'route' => 'dashboard',
     ],
     [
         'label' => 'Master Data',

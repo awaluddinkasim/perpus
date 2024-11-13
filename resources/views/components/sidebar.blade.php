@@ -26,13 +26,15 @@
                                 </span> <span class="float-right"><i class="mdi mdi-chevron-right"></i></span></a>
                             <ul class="list-unstyled">
                                 @foreach ($menu['submenu'] as $menu)
-                                    <li><a href="#">{{ $menu['label'] }}</a></li>
+                                    <li><a
+                                            href="{{ isset($menu['route']) ? route($menu['route']) : '#' }}">{{ $menu['label'] }}</a>
+                                    </li>
                                 @endforeach
                             </ul>
                         </li>
                     @else
                         <li>
-                            <a href="#" class="waves-effect">
+                            <a href="{{ isset($menu['route']) ? route($menu['route']) : '#' }}" class="waves-effect">
                                 <i class="mdi mdi-{{ $menu['icon'] }}"></i>
                                 <span>{{ $menu['label'] }}</span>
                             </a>

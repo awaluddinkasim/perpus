@@ -14,6 +14,8 @@
     <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/icons.css') }}" rel="stylesheet" type="text/css">
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet" type="text/css">
+
+    @stack('styles')
 </head>
 
 <body class="fixed-left">
@@ -76,6 +78,8 @@
 
     <!-- App js -->
     <script src="{{ asset('assets/js/app.js') }}"></script>
+
+    @stack('scripts')
 </body>
 
 </html>
