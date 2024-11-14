@@ -25,17 +25,14 @@
 
                 <h3 class="mt-0 text-center m-b-15">
                     <a href="" class="logo logo-admin">
-                        <img src="{{ asset('assets/images/logo.png') }}" height="24" alt="logo">
+                        <img src="{{ asset('assets/images/logo.png') }}" height="108" alt="logo">
+                        <h5>Sistem Informasi Perpustakaan SMAN 1 HU'U</h5>
                     </a>
                 </h3>
 
                 <div class="p-3">
 
-                    @foreach ($errors->all() as $error)
-                        <div class="alert alert-danger">
-                            {{ $error }}
-                        </div>
-                    @endforeach
+                    <x-component.errors />
 
                     <form class="form-horizontal m-t-20" action="{{ route('authenticate') }}" method="post"
                         autocomplete="off">

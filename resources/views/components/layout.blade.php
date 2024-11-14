@@ -54,7 +54,7 @@
             </div> <!-- content -->
 
             <footer class="footer">
-                © 2024
+                Perpustakaan SMAN 1 HU'U &copy; 2024
             </footer>
 
         </div>

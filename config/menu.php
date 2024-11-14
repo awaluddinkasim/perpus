@@ -12,19 +12,23 @@ return [
         'submenu' => [
             [
                 'label' => 'Kategori',
+                'route' => 'kategori',
             ],
             [
                 'label' => 'Penerbit',
+                'route' => 'penerbit',
             ]
         ],
     ],
     [
         'label' => 'Manajemen Buku',
         'icon' => 'library-books',
+        'route' => 'buku',
     ],
     [
         'label' => 'Data Anggota',
         'icon' => 'account-multiple',
+        'route' => 'anggota',
     ],
     [
         'label' => 'Peminjaman',

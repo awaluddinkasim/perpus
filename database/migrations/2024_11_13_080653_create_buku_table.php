@@ -13,6 +13,13 @@ return new class extends Migration
     {
         Schema::create('buku', function (Blueprint $table) {
             $table->id();
+            $table->string('isbn')->unique();
+            $table->string('judul');
+            $table->string('penulis');
+            $table->foreignId('kategori_id')->constrained('kategori')->onDelete('cascade');
+            $table->foreignId('penerbit_id')->constrained('penerbit')->onDelete('cascade');
+            $table->string('tahun_terbit');
+            $table->string('jumlah_halaman');
             $table->timestamps();
         });
     }

@@ -7,7 +7,7 @@
     <!-- LOGO -->
     <div class="topbar-left">
         <div class="text-center">
-            <a href="/" class="logo"><i class="mdi mdi-assistant"></i> {{ config('app.name') }}</a>
+            <a href="/" class="logo"><i class="mdi mdi-book"></i> {{ config('app.name') }}</a>
         </div>
     </div>
 

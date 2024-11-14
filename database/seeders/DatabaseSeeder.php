@@ -20,6 +20,11 @@ class DatabaseSeeder extends Seeder
             'role' => 'admin',
         ]);
 
-        Anggota::factory(10)->create();
+        Anggota::factory(15)->create();
+
+        $this->call([
+            KategoriSeeder::class,
+            PenerbitSeeder::class
+        ]);
     }
 }
