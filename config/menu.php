@@ -33,9 +33,16 @@ return [
     [
         'label' => 'Peminjaman',
         'icon' => 'library',
+        'route' => 'peminjaman',
+    ],
+    [
+        'label' => 'Petugas',
+        'icon' => 'account-star',
+        'route' => 'petugas',
     ],
     [
         'label' => 'Tentang',
         'icon' => 'information',
+        'route' => 'tentang',
     ],
 ];

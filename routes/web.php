@@ -1,11 +1,14 @@
 <?php
 
+use App\Http\Controllers\AccountController;
 use App\Http\Controllers\AnggotaController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PeminjamanController;
 use App\Http\Controllers\PenerbitController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -37,6 +40,19 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/anggota/{anggota}/edit', [AnggotaController::class, 'edit'])->name('anggota.edit');
     Route::put('/anggota/{anggota}', [AnggotaController::class, 'update'])->name('anggota.update');
     Route::delete('/anggota/{anggota}', [AnggotaController::class, 'destroy'])->name('anggota.destroy');
+
+    Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman');
+    Route::post('/peminjaman', [PeminjamanController::class, 'store'])->name('peminjaman.store');
+
+    Route::get('/petugas', [UserController::class, 'index'])->name('petugas');
+    Route::post('/petugas', [UserController::class, 'store'])->name('petugas.store');
+
+    Route::get('/tentang', function () {
+        return view('pages.tentang');
+    })->name('tentang');
+
+    Route::get('/akun', [AccountController::class, 'index'])->name('akun');
+    Route::put('/akun', [AccountController::class, 'update'])->name('akun.update');
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
