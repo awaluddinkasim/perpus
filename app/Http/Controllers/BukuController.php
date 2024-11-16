@@ -25,10 +25,10 @@ class BukuController extends Controller
         $data = $request->validate([
             'isbn' => 'required|unique:buku',
             'judul' => 'required|unique:buku',
-            'pengarang' => 'required',
+            'penulis' => 'required',
             'penerbit_id' => 'required',
             'kategori_id' => 'required',
-            'tahun' => 'required|digits:4',
+            'tahun_terbit' => 'required|digits:4',
             'jumlah_halaman' => 'required|numeric',
         ]);
 
@@ -51,10 +51,10 @@ class BukuController extends Controller
         $data = $request->validate([
             'isbn' => 'required|unique:buku,isbn,' . $buku->id,
             'judul' => 'required|unique:buku,judul,' . $buku->id,
-            'pengarang' => 'required',
+            'penulis' => 'required',
             'penerbit_id' => 'required',
             'kategori_id' => 'required',
-            'tahun' => 'required|digits:4',
+            'tahun_terbit' => 'required|digits:4',
             'jumlah_halaman' => 'required|numeric',
         ]);
 

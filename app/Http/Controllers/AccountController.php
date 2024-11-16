@@ -29,6 +29,6 @@ class AccountController extends Controller
 
         auth()->user()->update($data);
 
-        return redirect()->route('account')->with('success', 'Update akun berhasil');
+        return redirect()->route('akun')->with('success', 'Update akun berhasil');
     }
 }

@@ -1,5 +1,7 @@
-<button type="button" class="mb-3 btn btn-primary waves-effect waves-light" data-toggle="modal"
-    data-target="#{{ $id }}">
+@props(['id', 'title', 'label', 'use_margin'])
+
+<button type="button" class="{{ $use_margin ? 'mb-3 ' : '' }} btn btn-primary waves-effect waves-light"
+    data-toggle="modal" data-target="#{{ $id }}">
     {{ $label }}
 </button>
 

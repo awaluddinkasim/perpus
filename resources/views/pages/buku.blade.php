@@ -7,12 +7,12 @@
                 <x-form.input label="ISBN" name="isbn" :required="true" />
                 <x-form.input label="Judul" name="judul" :required="true" />
                 <x-form.input label="Penulis" name="penulis" :required="true" />
-                <x-form.select label="Kategori" name="kategori" :required="true">
+                <x-form.select label="Kategori" name="kategori_id" :required="true">
                     @foreach ($daftarKategori as $kategori)
                         <option value="{{ $kategori->id }}">{{ $kategori->nama }}</option>
                     @endforeach
                 </x-form.select>
-                <x-form.select label="Penerbit" name="penerbit" :required="true">
+                <x-form.select label="Penerbit" name="penerbit_id" :required="true">
                     @foreach ($daftarPenerbit as $penerbit)
                         <option value="{{ $penerbit->id }}">{{ $penerbit->nama }}</option>
                     @endforeach
@@ -54,6 +54,7 @@
                             <td>{{ $buku->tahun_terbit }}</td>
                             <td>{{ $buku->jumlah_halaman }}</td>
                             <td class="text-center">
+                                <a href="{{ route('buku.edit', $buku->id) }}" class="btn btn-info btn-sm">Edit</a>
                                 <form action="{{ route('buku.destroy', $buku->id) }}" class="d-inline" method="post">
                                     @method('delete')
                                     @csrf

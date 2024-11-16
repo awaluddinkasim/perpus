@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
@@ -26,5 +27,12 @@ class Peminjaman extends Model
     public function buku(): BelongsTo
     {
         return $this->belongsTo(Buku::class);
+    }
+
+    public function status(): Attribute
+    {
+        return Attribute::make(
+            get: fn() => $this->tanggal_kembali ? 'Dikembalikan' : 'Dipinjam',
+        );
     }
 }

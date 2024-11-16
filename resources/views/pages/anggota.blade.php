@@ -32,7 +32,7 @@
                     <th>Kelas</th>
                     <th>Alamat</th>
                     <th>No. HP</th>
-                    <th>Aksi</th>
+                    <th></th>
                 </x-slot:head>
                 <x-slot:body>
                     @foreach ($daftarAnggota as $anggota)

@@ -39,6 +39,7 @@ return [
         'label' => 'Petugas',
         'icon' => 'account-star',
         'route' => 'petugas',
+        'admin' => true,
     ],
     [
         'label' => 'Tentang',

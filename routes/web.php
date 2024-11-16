@@ -33,6 +33,8 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/buku', [BukuController::class, 'index'])->name('buku');
     Route::post('/buku', [BukuController::class, 'store'])->name('buku.store');
+    Route::get('/buku/{buku}/edit', [BukuController::class, 'edit'])->name('buku.edit');
+    Route::put('/buku/{buku}', [BukuController::class, 'update'])->name('buku.update');
     Route::delete('/buku/{buku}', [BukuController::class, 'destroy'])->name('buku.destroy');
 
     Route::get('/anggota', [AnggotaController::class, 'index'])->name('anggota');
@@ -43,9 +45,14 @@ Route::group(['middleware' => 'auth'], function () {
 
     Route::get('/peminjaman', [PeminjamanController::class, 'index'])->name('peminjaman');
     Route::post('/peminjaman', [PeminjamanController::class, 'store'])->name('peminjaman.store');
+    Route::get('/peminjaman/{peminjaman}', [PeminjamanController::class, 'show'])->name('peminjaman.show');
+    Route::put('/peminjaman/{peminjaman}', [PeminjamanController::class, 'update'])->name('peminjaman.update');
 
     Route::get('/petugas', [UserController::class, 'index'])->name('petugas');
     Route::post('/petugas', [UserController::class, 'store'])->name('petugas.store');
+    Route::get('/petugas/{petugas}/edit', [UserController::class, 'edit'])->name('petugas.edit');
+    Route::put('/petugas/{petugas}', [UserController::class, 'update'])->name('petugas.update');
+    Route::delete('/petugas/{petugas}', [UserController::class, 'destroy'])->name('petugas.destroy');
 
     Route::get('/tentang', function () {
         return view('pages.tentang');

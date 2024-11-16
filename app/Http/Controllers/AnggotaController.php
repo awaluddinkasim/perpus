@@ -23,7 +23,7 @@ class AnggotaController extends Controller
             'nama' => 'required',
             'kelas' => 'required|in:X,XI,XII',
             'alamat' => 'required',
-            'no_hp' => 'required|numeric',
+            'no_hp' => 'required',
         ]);
 
         Anggota::create($data);
@@ -45,7 +45,7 @@ class AnggotaController extends Controller
             'nama' => 'required',
             'kelas' => 'required|in:X,XI,XII',
             'alamat' => 'required',
-            'no_hp' => 'required|numeric',
+            'no_hp' => 'required',
         ]);
 
         $anggota->update($data);

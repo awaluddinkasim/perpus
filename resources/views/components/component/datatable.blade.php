@@ -25,7 +25,7 @@
     </script>
 @endpushOnce
 
-<table id="{{ $id }}" class="table">
+<table id="{{ $id }}" class="table table-hover">
     <thead>
         <tr>
             {{ $head }}

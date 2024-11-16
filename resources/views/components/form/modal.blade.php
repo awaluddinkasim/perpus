@@ -1,5 +1,8 @@
-<x-component.modal id="{{ $id }}" title="{{ $title }}" label="{{ $label }}">
+@props(['method' => 'post', 'id', 'title', 'label', 'action', 'use_margin' => true])
+
+<x-component.modal id="{{ $id }}" title="{{ $title }}" label="{{ $label }}" :use_margin="$use_margin">
     <form action="{{ $action }}" method="post" autocomplete="off">
+        @method($method)
         @csrf
         <div class="modal-body">
             {{ $slot }}

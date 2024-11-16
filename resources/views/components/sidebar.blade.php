@@ -18,6 +18,9 @@
                 <li class="menu-title">Main</li>
 
                 @foreach (config('menu') as $menu)
+                    @if (auth()->user()->role != 'admin' && isset($menu['admin']))
+                        @continue
+                    @endif
                     @isset($menu['submenu'])
                         <li class="has_sub">
                             <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-{{ $menu['icon'] }}"></i>
